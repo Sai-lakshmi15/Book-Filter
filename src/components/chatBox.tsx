@@ -4,7 +4,7 @@ import { ChatBoxProps } from "@/types/types";
 
 const ChatBox: React.FC<ChatBoxProps> = ({ chatHistory }) => {
   return (
-    <div>
+    <div className="flex flex-col gap-5">
       {chatHistory.map((chat) => (
         <div
           key={chat.id}

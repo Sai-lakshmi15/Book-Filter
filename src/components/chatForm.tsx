@@ -19,6 +19,46 @@ const ChatForm: React.FC<ChatFormProps> = ({ setChatHistory }) => {
       text: userMessage,
     };
     setChatHistory((prev) => [...prev, newMessage]);
+    const aiMessage: Message = {
+  id: crypto.randomUUID(),
+  sessionId: "session-1",
+  sender: "chatbot",
+  timestamp: new Date(),
+
+  reply: `Here are some books you might enjoy based on your interest in romance and strong male leads:`,
+
+  suggestions: [
+    "More books with billionaire heroes",
+    "Enemies to lovers romance",
+    "Slow burn love stories",
+  ],
+
+  books: [
+    {
+      title: "The Fine Print",
+      author: "Lauren Asher",
+      description: "A grumpy billionaire meets a determined woman working at his theme park.",
+      releaseYear: 2022,
+      genre: ["Romance", "Contemporary"],
+      percentageFit: 92,
+      cover: "https://covers.openlibrary.org/b/id/123456-L.jpg",
+      rank: 1,
+      isbn: "9781737507710",
+    },
+    {
+      title: "King of Wrath",
+      author: "Ana Huang",
+      description: "A powerful CEO enters a forced engagement that turns into something deeper.",
+      releaseYear: 2022,
+      genre: ["Romance", "Drama"],
+      percentageFit: 89,
+      cover: "https://covers.openlibrary.org/b/id/234567-L.jpg",
+      rank: 2,
+      isbn: "9780349434285",
+    },
+  ],
+};
+  setChatHistory((prev) => [...prev, aiMessage]);
     setPrompt("");
   };
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
