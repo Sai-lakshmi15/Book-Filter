@@ -1,8 +1,8 @@
-import ChatBox from "@/components/chatBox";
+import ChatWindow from "@/components/chatWindow";
 export default function Home() {
   return (
     <div className="h-full">
-       <ChatBox/>
+       <ChatWindow/>
     </div>
   );
 }
