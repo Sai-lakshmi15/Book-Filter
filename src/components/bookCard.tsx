@@ -12,7 +12,7 @@ const BookCard: React.FC<BookCardProps> = ({
   cover,
 }) => {
   return (
-    <div className="w-[50%] h-40 rounded-md border-2 border-black flex gap-5 px-3 py-2 overflow-hidden">
+    <div className="w-[80%] h-40 rounded-md border-2 border-black flex gap-5 px-3 py-2 overflow-hidden">
       <div className="relative aspect-2/3">
         <Image src={cover} alt={title} fill className="object-contain" />
       </div>
@@ -30,14 +30,12 @@ const BookCard: React.FC<BookCardProps> = ({
         <p className="pb-2">{description}</p>
         <p className="flex gap-2">
           {genre.map((g, i) => (
-            <>
-              <span
-                key={i}
-                className="bg-black text-white px-3 rounded-full text-xs text-semibold"
-              >
-                {g}
-              </span>
-            </>
+            <span
+              key={i}
+              className="bg-black text-white px-3 rounded-full text-xs text-semibold"
+            >
+              {g}
+            </span>
           ))}
         </p>
       </div>
